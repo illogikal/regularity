@@ -103,7 +103,7 @@ class Regularity
 
   def write(str, args=nil)
     raise Regularity::Error.new('#end_with has already been called') if @ended
-    @str << (args.nil? ? str : str % interpret(*args))
+    @str = @str + (args.nil? ? str : str % interpret(*args))
     self
   end
 
